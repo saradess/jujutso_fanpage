@@ -1,0 +1,32 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    display: grid;
+    gap:10px;
+    grid-template-columns: repeat(4, 1fr);
+    
+    &__container {
+    position: relative;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all ease-in-out 0.5s;
+    
+    &__img {
+        width: 100%;
+        filter: brightness(0.50); 
+    }
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5); // Fundo semitransparente para melhor contraste
+        padding: 10px;
+        border-radius: 5px;
+    }
+    }
+}
