@@ -1,32 +1,45 @@
 .cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    margin-top: 10px;
     display: grid;
-    gap:10px;
+    gap: calc(5px);
     grid-template-columns: repeat(4, 1fr);
-    
-    &__container {
     position: relative;
-    object-fit: cover;
     border-radius: 10px;
     transition: all ease-in-out 0.5s;
-    
-    &__img {
-        width: 100%;
-        filter: brightness(0.50); 
-    }
 
-    &__text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.5); // Fundo semitransparente para melhor contraste
-        padding: 10px;
-        border-radius: 5px;
-    }
-    }
+        &:first-child {
+            margin-left: 5px;
+        }
+
+        &:last-child {
+            margin-right: 5px;
+        }
+
+        &__img {
+            width: 23em; 
+            height: 100%; 
+            object-fit: cover; 
+        }
+
+        @media (max-width: 768px) {
+            margin-left: 10px;
+            display: none;
+            
+            &__img {
+                margin-bottom: 10px;
+                width: 350px;
+                height: auto;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width:1024px){
+            margin-left: 10px;
+            gap: 2px;
+            
+            img{
+            margin-bottom: 10px;
+            width: 12em; 
+            height: 100%; 
+            }
+        }
 }
