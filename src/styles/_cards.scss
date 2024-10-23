@@ -1,45 +1,74 @@
-.cards {
-    margin-top: 10px;
-    display: grid;
-    gap: calc(5px);
-    grid-template-columns: repeat(4, 1fr);
-    position: relative;
-    border-radius: 10px;
-    transition: all ease-in-out 0.5s;
+.cards{
+    display: flex;
+    justify-content: center; /* Centraliza o container horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente (se necessário) */
+    padding: 0 10px; /* Garante que tenha um espaçamento mínimo nas laterais */
 
+    &__container {
+        margin-top: 10px;
+        display: flex;
+        gap: 5px;
+        position: relative;
+        border-radius: 10px;
+        transition: all ease-in-out 0.5s;
+    
         &:first-child {
-            margin-left: 5px;
+            margin-left: 10px; /* Espaçamento na lateral esquerda da primeira imagem */
         }
-
+    
         &:last-child {
-            margin-right: 5px;
+            margin-right: 10px; /* Espaçamento na lateral direita da última imagem */
         }
-
+    
         &__img {
-            width: 23em; 
-            height: 100%; 
-            object-fit: cover; 
-        }
+            width: calc(25% - 10px);
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid white;
+            transition: all ease-in-out 0.5s;
+            position: relative;
+            cursor: pointer;
 
+            &.expanded {
+                width: 25%;
+            }
+    
+            &:hover {
+                z-index: 10;
+                transform: scale(1.1);
+            }
+        }
+    
         @media (max-width: 768px) {
             margin-left: 10px;
-            display: none;
-            
+    
             &__img {
                 margin-bottom: 10px;
-                width: 350px;
+                width: calc(25% - 8px);
                 height: auto;
+    
+                &:hover {
+                    z-index: 10;
+                    transform: perspective(1000px) scale(1.5) translateZ(30px); /* Escala menor para telas pequenas */
+                }
             }
         }
-
-        @media (min-width: 768px) and (max-width:1024px){
+    
+        @media (min-width: 768px) and (max-width: 1024px) {
             margin-left: 10px;
             gap: 2px;
-            
-            img{
-            margin-bottom: 10px;
-            width: 12em; 
-            height: 100%; 
+    
+            &__img {
+                margin-bottom: 10px;
+                width: 12em;
+                height: 100%;
+    
+                &:hover {
+                    z-index: 10;
+                    transform: perspective(500px) scale(1.5) translateZ(40px); /* Ajusta o scale e o Z para tablets */
+                }
             }
         }
+    }
 }
