@@ -5,9 +5,22 @@
     position: sticky;
     top: 0;
     left: 0;
-    background-color: variaveis.$corDeFundo;
+    background-color: rgba(variaveis.$corDeFundo, 0.8);
     transition: background-color .5s ease;
     z-index: 1;
+
+    &--is-hidden{
+        background-color: transparent;
+        transition: background-color .5s ease;
+
+        .header{
+            &__logo{
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity .5s ease;
+            }
+        }
+    }
 
     
     &__container{
@@ -27,6 +40,8 @@
         width: 100%;
         align-items: center;
         transition: opacity .5s ease;
+        border-radius: 5px;
+        //opacity: 0.8;
 
         @media (max-width: 768px) {
             max-width: 150px;
