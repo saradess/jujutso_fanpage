@@ -35,22 +35,22 @@ body{
     @include text;
 
     @media (max-width: 768px) {
-        @include text(15px);
+        @include text(20px);
     }
 
     &--big {
-        @include text(18px);
+        @include text(22px);
 
         @media (max-width: 768px) {
-            @include text(14px);
+            @include text(20px);
         }
     };
 
     &--small {
-        @include text(12px);
+        @include text(18px);
 
         @media (max-width: 768px) {
-            @include text(11px);
+            @include text(16px);
         }
     }
 }
@@ -85,6 +85,7 @@ body{
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 5px;
+    overflow: hidden;
 
     @media (max-width: 768px) {
         display: block;
@@ -94,11 +95,19 @@ body{
         max-width: 100%;
     }
 
-    &__text_container{
+    &__text__container{
         padding: 0.2vw;
 
         h2{
             margin-bottom: 24px;
+        }
+
+        &__center{
+            max-width: 70%;
+
+            @media (max-width: 768px) {
+                max-width: 100%;
+            }
         }
 
     }
@@ -111,7 +120,7 @@ body{
             width: 100%;
         }
 
-        &__text_container{
+        &__text__container{
             position: absolute;
             top: 0vw;
             left: 50%;
@@ -128,4 +137,8 @@ body{
             }
         }
     }
+}
+
+.image-text-section:nth-of-type(3) {
+    background-color: #060606;
 }
