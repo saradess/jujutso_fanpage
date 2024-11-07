@@ -5,13 +5,25 @@
 @use 'phrases';
 @use 'footer';
 
+@font-face{
+    font-family: Mangat;
+    src: url(../../assets/fonts/mangat.ttf);
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: Qetod;
+    src: url(../../assets/fonts/Qetod.ttf);
+    font-weight: 400;
+}
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Nunito", serif;
     list-style: none;
+    font-family: 'nunito',sans-serif;
 }
 
 body{
